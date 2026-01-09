@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERD</title>
+</head>
+<body>
+    <h1>ERD</h1>
+    <h2>Mis on ERD diagramm</h2>
+    <p>
+        Olemi-seoste diagramm (Entity Relationship Diagram ehk ER-diagramm) on vooskeemi tüüp, mis kujutab, kuidas erinevad „olemid“ - näiteks inimesed,<br/>
+        objektid või mõisted - on süsteemi sees omavahel seotud.
+    </p><br/>
+    <h2>Kus ERD diagramme kasutatakse</h2>
+    <p>
+        ER-diagramme kasutatakse kõige sagedamini tabelipõhiste andmebaaside kavandamisel ja vigade leidmisel tarkvaraarenduse, äriliste infosüsteemide,<br/>
+        hariduse ja teadustöö valdkondades.
+    </p><br/>
+    <h1>ER-diagrammi põhikomponendid ja omadused</h1>
+        <p>
+            Entity - määratletav objekt, inimene, mõiste või sündmus, millest saab andmeid salvestada. Mõtle sellele kui nimisõnale. Näited: klient, õpilane,<br/>
+            auto, toode. Tavaliselt kujutatakse ristkülikuna.<br/>
+            <img height="150" src="../pildid/Entity.png" alt=""><br/><br/><br/>
+            Entity categories - Üksused jagunevad tugevateks, nõrkadeks ja seostavateks. Tugevat üksust saab määratleda ainult selle omaduste järgi, nõrka mitte.<br/>
+            Seostav üksus ühendab omavahel erinevaid üksuseid või elemente.<br/>
+            <img height="150" src="../pildid/Entity categories.png" alt=""><br/><br/><br/>
+            Relationship - Suhted näitavad, kuidas üksused üksteisega seotud on või toimivad. Näiteks õpilane registreerub kursusele - see seos ühendab kaks üksust.<br/>
+            Diagrammil kuvatakse suhted tavaliselt teemantide või siltidena.<br/>
+            <img height="150" src="../pildid/Relationship.png" alt=""><br/><br/><br/>
+            Attribute - Omadus või tunnus mingi objekti kohta. Sageli kujutatakse ovaali või ringina.<br/>
+            <img height="150" src="../pildid/Attribute.png" alt=""><br/><br/><br/>
+            Attribute categories - Atribuudid jagunevad lihtsateks, koostatud ja tuletatud ning ühekordseteks või mitmekordseteks. Lihtne - väärtus on jagamatu,<br/>
+            näiteks telefoninumber. Koostatud - koosneb alamatribuutidest. Tuletatud - arvutatakse või tuletatakse teisest atribuudist, näiteks vanus sünnikuupäeva põhjal.<br/>
+            <img height="150" src="../pildid/Attribute categories.png" alt=""><br/><br/><br/>
+            Multi-value - Märgitakse rohkem kui üks atribuudi väärtus, näiteks inimese mitu telefoninumbrit.<br/>
+            <img height="150" src="../pildid/Multi-value.png" alt=""><br/><br/><br/>
+            Cardinality - Määrab kahe objekti või objektikogumi vahelised arvulised seosed. Peamised seose tüübid on üks-ühele, üks-mitmele ja mitu-mitmele.<br/>
+            Näide üks-ühele seosest: üks õpilane on seotud ühe postiaadressiga. Näide üks-mitmele seosest: üks õpilane registreerub mitmele kursusele, kuid<br/>
+            iga kursus on seotud ainult ühe õpilasega. Näide mitu-mitmele seosest: õpilased on seotud mitme õppejõuga ja iga õppejõud on seotud mitme õpilasega.<br/>
+            <img height="300" src="../pildid/Cardinality.png" alt=""><br/><br/><br/>
+        </p>
+        <h2>Võtmed</h2>
+        <p>
+            Key - Üldine mõiste, mis tähistab atribuuti või atribuute, mida kasutatakse andmete unikaalseks tuvastamiseks tabelis.<br/><br/>
+            Primary Key - Atribuut või atribuudi kombinatsioon, mis unikaalselt identifitseerib iga tabeli rea.<br/><br/>
+            Foreign Key - Atribuut, mis viitab teise tabeli primary key-le ja seeläbi loob tabelite vahel seose.<br/><br/>        
+            Composite Key - Kui kaks või rohkem atribuutidest koos moodustavad rea unikaalse identifikaatori.<br/><br/><br/>
+
+            Allikad:<br/>
+        <a href="https://www.lucidchart.com/pages/er-diagrams">Luchidchart</a><br/>
+        </p>
+</body>
+</html>
