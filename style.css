@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+
+    background-image: url("pildid/2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TUME KIHT */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8); 
+    z-index: -1;
+}
+
+/* SISU KAST */
+.content {
+    position: relative;
+    width: 55%;
+    max-width: 1200px;
+
+    /* kõrgus automaatne, scrollib kui vaja */
+    height: auto;
+    min-height: 80vh;  /* vähemalt 80% ekraani kõrgusest */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* sisu algusesse, mitte keskele */
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    background: rgba(20, 20, 40,0.8);
+    padding: 40px 30px; /* rohkem üla- ja alaülekannet */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+    margin: 20px auto; /* horisontaalne keskele */
+    animation: pageEnter 0.9s ease-out forwards;
+}
+
+.container {
+    text-align: center;
+    color: white;                  /* tekst nähtavaks */
+    background: rgba(20, 20, 40, 0.9); /* poolläbipaistev taust */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.btn-gradient {
+    position: relative; /* ⬅️ see rida lahendab nihke */
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: white;
+    text-decoration: none;
+    background: transparent;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    box-shadow: none;
+    overflow: hidden;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-gradient::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+
+    background: linear-gradient(
+        120deg,
+        rgba(0, 225, 255, 0.8),
+        rgba(0, 225, 255, 0.8),
+        rgba(0, 225, 255, 0.8)
+    );
+
+    filter: blur(35px);
+
+    /* ❗ alguses peidus */
+    opacity: 0;
+
+    transform: translateX(-120%);
+    transition:
+        transform 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.4s ease;
+
+    z-index: -1;
+}
+
+.btn-gradient:hover::before {
+    transform: translateX(0);
+    opacity: 0.75;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(0, 174, 255, 0.55);
+}
+
+.btn-gradient:not(:hover)::before {
+    transform: translateX(120%);
+    opacity: 0;
+}
+
+.btn-gradient:active {
+    transform: scale(0.97);
+}
+
+h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #ff4ecd, #6cf0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    opacity: 0.85;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+h2 {
+    margin: 2.5rem 0 1rem;
+    color: #6cf0ff;
+    font-weight: 500;
+    position: relative;
+    top: 25px;
+}
+
+h3 {
+    margin: 1.5rem 0 1rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.about {
+    background: rgba(255, 255, 255, 0.05);  /* poolläbipaistev */
+    border: 1px solid rgba(92, 92, 92, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;   /* vahe sisu vahel */
+    text-align: center;
+    backdrop-filter: blur(5px);  /* elegantne glassmorphism efekt */
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Keskele horisontaalselt */
+.logo-container {
+    display: flex;
+    justify-content: center; /* horisontaalne keskele */
+    align-items: center;
+    margin: 40px 0;         /* ülemine ja alumine vahe */
+}
+
+/* Ümmargune, helendav logo */
+.glow-logo {
+    width: 120px;             /* suurus */
+    height: 120px;
+    border-radius: 50%;       /* teeb ümmarguseks */
+    object-fit: cover;        /* pilt jääb kastiga kenasti sisse */
+    
+/* Algne box-shadow */
+    box-shadow: 0 0 20px rgba(38, 143, 161, 0.7), 
+                0 0 40px rgba(221, 36, 118, 0.5);
+
+/* Sujuv helendus animatsioon */
+    animation: glowInfinite 2s infinite alternate ease-in-out;
+}
+
+/* Animatsioon ainult helendamiseks */
+@keyframes glowInfinite {
+    0% {
+        box-shadow: 0 0 15px rgba(0, 183, 255, 0.6),
+                    0 0 30px rgba(0, 217, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 35px rgba(0, 225, 255, 0.9),
+                    0 0 60px rgba(0, 195, 255, 0.7);
+    }
+
+}
+.button-group {
+    display: flex;
+    justify-content: center;  /* horisontaalne keskele */
+    gap: 5px;                /* vahe nuppude vahel */
+    margin-top: 30px;         /* vahe eelmise sisu ja nuppude vahel */
+}
+
+.site-footer {
+    text-align: center;
+    color: white;
+    opacity: 0.5;
+
+    margin-top: 40px;  /* liigutab footerit 20px allapoole eelmise sisu suhtes */
+}
+
+.btn-icon {
+    width: 25px;
+    height: 25px;
+    display: block;             /* väldib baseline nihkeid */
+}
+
+.title {
+    position: relative;
+    display: inline-block;   /* joon järgib ainult teksti laiust */
+    color: white;
+    font-size: 1.2rem;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    width: 120%;           /* joon on 20% laiem kui tekst */
+    height: 1.5px;
+    background: linear-gradient(90deg, #0e95d4, #0e95d4);
+    border-radius: 5px;
+}
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
