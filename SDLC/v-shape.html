@@ -6,6 +6,54 @@
     <title>V-Shape arendusmudel</title>
 </head>
 <body>
-    
+    <h1>V-shape</h1>
+    <h2>Mis see on?</h2>
+    <p>
+        V-mudel on tarkvaraarenduse elutsükli mudel, mis on pika klassikalise veemudeli (waterfall) laiendus. Selle nimi tuleb sellest, et arendusetapid <br/>
+        ja testimise etapid on seotud V-kujuliselt: vasak pool on arendus (verifitseerimine) ja parem pool testimine (validatsioon).<br/>
+    </p>
+    <h2>Mis etapid seal on?</h2>
+    <p>
+        V-mudelit võib visualiseerida järgmiste põhietappidena (vasakult paremale ja allapoole - V-kuju põhja suunas ning seejärel ülespoole):<br/>
+        Vasak pool - arendus<br/>
+        <ul>
+            <li>Nõuete analüüs - kogumine ja dokumenteerimine.</li>
+            <li>Süsteemi / Suure disaini planeerimine - ülevaatelise arhitektuuri kirjeldamine.</li>
+            <li>Detailne disain - komponendid, liidesed.</li>
+            <li>Implementatsioon - tegelik arendus.</li>
+        </ul>
+        Parem pool - testimine<br/>
+        <ul>
+            <li>Ühiktestimine - testib üksikuid komponente.</li>
+            <li>Integratsioonitestimine - testib ühendatud mooduleid.</li>
+            <li>Süsteemitestimine - testib kogu süsteemi tervikuna.</li>
+            <li>Kasutajate vastuvõtutestimine - lõpptest kliendi vaates.</li>
+        </ul>
+    </p>
+    <h2>Milline näeb välja arendusmudel joonisena</h2>
+    <img height="250" src="../pildid/V-shape.png" alt="">
+    <h2>Mis on arendusmudeli tähtsaim omadus, ja miks</h2>
+    <p>
+        Iga arendusetapp on seotud konkreetse testimise etapiga. See tähendab, et testimine planeeritakse algusest peale ja toimub paralleelselt arendusega, <br/>
+        mis aitab viga avastada juba varakult ja tagada, et valminud tarkvara vastab nõuetele.<br/><br/>
+    </p>
+    <h2>Võta arendusmudel kokku Heade ja Veade tabelina</h2>
+    <table>
+        <tr>
+            <th>Head</th>
+            <th>Vead</th>
+        </tr>
+        <tr>
+            <td>Testimine toimub varakult ja paralleelselt arendusega</td>
+            <td>Suurepärane dokumentatsioon ja jälgitavus</td>
+        </tr>
+        <tr>
+            <td>Suuremahuliste või keerukate projektide jaoks aeglane ja ressursimahukas</td>
+            <td>Kui algsed nõuded on valed, takistab mudel õigete tulemusteni jõudmist</td>
+        </tr>
+    </table><br/><br/>
+    <a href="https://www.geeksforgeeks.org/software-engineering/software-engineering-sdlc-v-model/">Allikas(Geeksforgeeks)</a><br/>
+    <a href="https://en.wikipedia.org/wiki/V-model">Allikas(Wikipedia)</a><br/>
+    <a href="https://www.guru99.com/et/v-model-software-testing.html">Allikas(Guru99)</a><br/>
 </body>
-</html>
+</html> 
