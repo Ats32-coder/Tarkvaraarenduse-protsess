@@ -13,10 +13,11 @@ html, body {
 
 /* BODY + TAUST */
 body {
+    padding-top: 64px;
     position: relative;
     min-height: 100vh;
 
-    background-image: url("pildid/2.jpg");
+    background-image: url("pildid/sky.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,7 +53,7 @@ body::before {
     text-align: center;
     color: white;
 
-    background: rgba(20, 20, 40, 0.85);
+    background: rgba(0, 0, 0, 0.85);
     padding: 40px 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -74,14 +75,14 @@ body::before {
 h1 {
     font-size: 2.3rem;
     margin-bottom: 1rem;
-    background: linear-gradient(90deg, #ff4ecd, #6cf0ff);
+    background: linear-gradient(180deg, #ffffff, #444444);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 h2 {
     margin: 2.5rem 0 1rem;
-    color: #6cf0ff;
+    color: #09a2e9;
     font-weight: 500;
     position: relative;
     top: 25px;
@@ -140,6 +141,14 @@ p {
     margin-top: 30px;
 }
 
+.button-group-column {
+    display: flex;
+    flex-direction: column;   /* ← see on põhiline */
+    align-items: center;      
+    gap: 10px;
+    margin-top: 30px;
+}
+
 .btn-gradient {
     position: relative;
     display: inline-flex;
@@ -170,9 +179,9 @@ p {
 
     background: linear-gradient(
         120deg,
-        rgba(0, 225, 255, 0.8),
-        rgba(0, 225, 255, 0.8),
-        rgba(0, 225, 255, 0.8)
+        rgb(0, 225, 255),
+        rgb(0, 225, 255),
+        rgb(0, 225, 255)
     );
 
     filter: blur(35px);
@@ -189,7 +198,7 @@ p {
 
 .btn-gradient:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 35px rgba(0, 174, 255, 0.55);
+    box-shadow: 0 0 35px rgba(71, 197, 255, 0.55);
 }
 
 .btn-gradient:active {
@@ -223,19 +232,128 @@ p {
     width: 120%; /* joon on 20% laiem kui tekst */ 
     height: 1.5px; background: 
     linear-gradient(90deg, #0e95d4, #0e95d4); 
-    border-radius: 5px; }
+    border-radius: 5px; 
+    }
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* 🔑 keskjoondus */
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.85)
+    );
+
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+}
+
+
+.nav-inner {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    padding: 10px 16px;              /* 👈 nupu tunne */
+    border-radius: 8px;              /* 👈 ümardus */
+    opacity: 0.9;
+
+    transition: 
+        background-color 0.25s ease,
+        opacity 0.25s ease,
+        transform 0.15s ease;
+
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.12); /* 👈 klikitav ala */
+    transform: translateY(-1px);                 /* 👈 “elus” tunne */
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    height: 80px;        /* muuda vajadusel */
+    width: auto;
+    cursor: pointer;
+
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-logo:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.nav-inner {
+    gap: 40px;
+}
+
+.compare {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+  border: 2px solid rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.column img {
+  width: 100%;
+  height: auto;
+}
+
+
 
 /* ANIMATSIOONID */
 @keyframes glowInfinite {
     from {
         box-shadow:
-            0 0 15px rgba(0, 183, 255, 0.6),
-            0 0 30px rgba(0, 217, 255, 0.5);
+            0 0 15px rgba(255, 255, 255, 0.6),
+            0 0 30px rgba(255, 255, 255, 0.5);
     }
     to {
         box-shadow:
-            0 0 35px rgba(0, 225, 255, 0.9),
-            0 0 60px rgba(0, 195, 255, 0.7);
+            0 0 35px rgba(255, 255, 255, 0.9),
+            0 0 60px rgba(255, 255, 255, 0.7);
     }
 }
 
