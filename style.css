@@ -62,6 +62,31 @@ body::before {
     animation: pageEnter 0.9s ease-out forwards;
 }
 
+.content-left {
+    position: relative;
+    z-index: 1;
+
+    width: 55%;
+    max-width: 1200px;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: left;
+    color: white;
+
+    background: rgba(0, 0, 0, 0.85);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+    margin: 20px auto;
+    animation: pageEnter 0.9s ease-out forwards;
+}
+
 /* CONTAINER */
 .container {
     text-align: center;
@@ -90,7 +115,7 @@ h2 {
 
 h3 {
     margin: 1.5rem 0 1rem;
-    color: white;
+    color: rgb(0, 255, 242);
     font-weight: 500;
 }
 
@@ -341,7 +366,74 @@ p {
   height: auto;
 }
 
+.accordion {
+    max-width: 600px;
+    margin: 0 auto;
+}
 
+.accordion-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ÕV1 / ÕV2 nupp */
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #00bfff;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* sisu */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+/* avatud olek */
+.accordion-item:hover .accordion-content {
+    max-height: 500px;
+}
+
+/* pill-nupud */
+.accordion-content a {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 18px;
+    width: fit-content;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 999px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.accordion-content a:hover {
+    background: #00bfff;
+    color: #000;
+    border-color: #00bfff;
+}
+pre {
+    background-color: #1e1e1e; /* Tume hall koodiplokk */
+    color: #d4d4d4;           /* Hele tekst koodis */
+    padding: 10px;
+    border-left: 4px solid #007BFF;
+    font-family: monospace;
+    overflow-x: auto;
+}
+code {
+    font-family: monospace;
+}
 
 /* ANIMATSIOONID */
 @keyframes glowInfinite {
