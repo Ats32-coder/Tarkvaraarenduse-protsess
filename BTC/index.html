@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <header class="top-nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../pildid/logo1-removebg-preview (1).png" alt="Minu logo">
+    </a>
+  
 
-    <a href="../index.html">Tagasi</a>
+    <nav class="nav-links">
+        <a href="../index.html">Tarkvara Arendusprotsess</a>
+        <a href="../AM/proge.html">Programmeerimise alused</a>
+        <a href="../AM/multim.html">Multimeedia</a>
+        <a href="../AM/Networking.html">Networking</a>
+    </nav>
+  </div>
+</header>
+    <div class="content">
     <!-- Tunnis tehtud bitcoin kalkulaatori programmi kohta tehke oma ainemappi eraldi saidi osa "BTC"
      kus on "index.html"
      Kirjeldus programmi kohta
@@ -17,10 +31,18 @@
      -->
      <h1>Bitcoin kalkulaator</h1>
      <p>
-        Bitcoin kalkulaator on programm, mis arvutab bitcoini väärtuse EUR ja USD valuutas.
+        BTC kalkulaator on programm, mis teisendab kasutaja sisestatud bitcoini koguse valitud valuutasse. Programmi käivitumisel kontrollitakse esmalt, kas BTC kogus on sisestatud;
+        puudumise korral kuvatakse teade „Palun sisesta BTC kogus“. Seejärel kontrollitakse, kas kasutaja on valinud sihtvaluuta, ning vajadusel kuvatakse teade „Palun vali valuuta“.
+        Arvutus toimub alles pärast vastava nupu vajutamist.
+        Kui valuuta on valitud (EUR, USD, GBP või EEK), saadab programm API päringu BTC hetkehinna saamiseks vastavas valuutas. Seejärel korrutatakse sisestatud BTC kogus saadud hinnaga.
+        EEK puhul jagatakse tulemus lisaks kursiga 15,6466. Kui päring või arvutus ebaõnnestub, kuvatakse veateade; õnnestumise korral kuvatakse arvutatud tulemus ekraanil.
      </p><br/><br/>
-     <img height="800" width="800" src="../pildid/BTC kalkulaatori voodiagramm2.png" alt=""><br/>
-     <a href="https://github.com/Ats32-coder/Bitcoinikalks">Bitcoin kalkulaatori repo</a><br/>
-
+     <div class="column">
+        <h3>Vooskeem</h3>
+            <img class="white-bg" src="../pildid/BTC kalkulaatori voodiagramm2.png" alt="Vooskeem">
+    </div>
+    <br>
+     <a class="btn-gradient" href="https://github.com/Ats32-coder/Bitcoinikalks">Bitcoin kalkulaatori repo</a><br/>
+    </div>
 </body>
 </html>

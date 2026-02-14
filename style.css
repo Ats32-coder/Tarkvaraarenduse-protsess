@@ -441,6 +441,10 @@ a {
     color: rgb(160, 241, 247);
 }
 
+.white-bg {
+  background-color: white;
+}
+
 /* ANIMATSIOONID */
 @keyframes glowInfinite {
     from {
