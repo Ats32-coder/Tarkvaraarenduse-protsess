@@ -445,6 +445,10 @@ a {
   background-color: white;
 }
 
+ul {
+  padding-left: 10px;
+}
+
 /* ANIMATSIOONID */
 @keyframes glowInfinite {
     from {
